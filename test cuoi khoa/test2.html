@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự đoán kết quả sổ số</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+   <div class="Lucky"> 
+    <div class="luckyNumber">
+        <h1>Lucky number</h1>
+    </div>
+        <div class="title">
+            <h2>Dự đoán một con số may mắn trong khoảng 1 đến 10</h2>
+        </div>
+        <div class="input">
+            <input type="number" id='numberInput' placeholder="Nhập số may mắn" type="Number" onkeypress="enterLogin(e, t)">
+            <br>
+            <button onclick="roll(event,this)">Submit</button>
+        </div>
+    </div>
+<script>
+    function roll (e,t) {
+    let a = document.getElementById('numberInput');
+    // if(a.value <=10 && a.value >0){
+    if (a.value === "5") {
+        alert("Bạn đã trúng giải thưởng lớn nhất của chúng tôi là một chuyến đi du lịch đất nước Zimbabwe")
+    }
+    else {
+        alert('Mời bạn nhập lại con số may mắn khác')
+    }
+    }
+    
+// }
+
+function enterLogin (e,t){
+    if(e.key === 'Enter') {
+        roll()
+    }
+}
+
+</script>
+</body>
+</html>

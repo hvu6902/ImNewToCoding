@@ -18,28 +18,35 @@
         <div class="input">
             <input type="number" id='numberInput' placeholder="Nhập số may mắn" type="Number" onkeypress="enterLogin(e, t)">
             <br>
-            <button onclick="roll(event,this)">Submit</button>
+            <button onclick="roll(event,this)" id="submit-btn">Submit</button>
         </div>
     </div>
 <script>
+    let clickNumber = 0
     function roll (e,t) {
     let a = document.getElementById('numberInput');
-    // if(a.value <=10 && a.value >0){
-    if (a.value === "5") {
-        alert("Bạn đã trúng giải thưởng lớn nhất của chúng tôi là một chuyến đi du lịch đất nước Zimbabwe")
+    
+    if(a.value <=10 && a.value >0){
+    if (a.value === '5') {
+        alert("Chúc mừng! Bạn đã dành được giải thưởng lớn nhất tuần của chúng tôi là 1 chuyến du lịch Zimbabwe")
     }
     else {
-        alert('Mời bạn nhập lại con số may mắn khác')
+        alert('Rất tiếc! Đó chưa phải là con số của chương trình. Vui lòng nhập lại số khác')
     }
     }
-    
-// }
-
-function enterLogin (e,t){
-    if(e.key === 'Enter') {
-        roll()
+    else {
+        alert('Số bạn vừa nhập không đúng với yêu cầu của chương trình. Vui lòng nhập lại')
     }
 }
+let submitBtn = document.getElementById("submit-btn")
+submitBtn.onclick = () => {
+    roll()
+    clickNumber++
+    if (clickNumber >= 3){
+        alert('Bạn đã hết lượt quay số. Chúc bạn may mắn lần sau')
+    }
+}
+
 
 </script>
 </body>
